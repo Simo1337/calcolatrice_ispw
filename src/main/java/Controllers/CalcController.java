@@ -5,16 +5,9 @@ import DAO.BtnDAO;
 import Entities.Button;
 
 public class CalcController {
-    private CalcBoundary CB;
 
-    public CalcController(CalcBoundary CB){
-        this.CB = CB;
-    }
-
-    public void DoOperation(String op){
+    public float DoOperation(String op, String log){
         Button PressedBTN = BtnDAO.GetClickedBTN(op);
-        String log = CB.GetLog();
-        float res = PressedBTN.DoOp(Integer.parseInt(log));
-        CB.PrintResult(res);
+        return PressedBTN.DoOp(Float.parseFloat(log));
     }
 }

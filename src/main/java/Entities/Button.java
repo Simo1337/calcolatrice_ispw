@@ -2,5 +2,8 @@ package Entities;
 
 public abstract class Button {
     protected String text = "";
-    public abstract float DoOp(int num);
+    public Button(String text){
+        this.text = text;
+    }
+    public abstract float DoOp(float num);
 }

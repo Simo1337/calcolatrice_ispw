@@ -1,44 +1,36 @@
 package Boundaries;
 
 import Controllers.CalcController;
-import java.util.Scanner;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 
 public class CalcBoundary {
-    private final CalcController CC = new CalcController(this);
-    private String log = "";
-    private final Scanner inputChannel;
+    @FXML
+    private Label log;
+    @FXML
+    private Label resultTxt;
+    private CalcController CC = new CalcController();
 
-    public CalcBoundary(Scanner inputChannel){
-        this.inputChannel = inputChannel;
+    @FXML
+    private void initialize(){
+        log.setText("0");
     }
 
-    public void Start(){
-        while (true){
-            System.out.println("Premere pulsante: ");
-            String newInput = inputChannel.nextLine();
-            if (newInput.equals("1/x")){
-                onFunctionClick(newInput);
-            }
-            else{
-                WriteOnLog(newInput);
-            }
-        }
+    public float onNumberClick(ActionEvent event){
+        String digit = ((javafx.scene.control.Button) event.getSource()).getText();
+        return CC.DoOperation(digit, log.getText());
     }
 
-    private void onFunctionClick(String op){
-        CC.DoOperation(op);
-        log = "";
+    @FXML
+    public void onNumberBTN(ActionEvent event){
+        log.setText(Float.toString(Float.parseFloat(log.getText())*10 + onNumberClick(event)));
     }
 
-    public void WriteOnLog(String textToWrite){
-        log += textToWrite;
+    public void onFunctionBTN(ActionEvent event){
+        resultTxt.setText(Float.toString(onNumberClick(event)));
+        log.setText("0");
     }
 
-    public String GetLog(){
-        return log;
-    }
-
-    public void PrintResult(float res){
-        System.out.println(res);
-    }
 }

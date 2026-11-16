@@ -9,17 +9,16 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="637.0" prefWidth="429.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="637.0" prefWidth="429.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Boundaries.CalcBoundary">
    <children>
       <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="203.0" prefWidth="429.0">
          <children>
-            <Label alignment="CENTER_RIGHT" prefHeight="60.0" prefWidth="394.0" text="6x12" textAlignment="CENTER">
+            <Label fx:id="log" alignment="CENTER_RIGHT" prefHeight="60.0" prefWidth="394.0" text="6x12" textAlignment="CENTER">
                <font>
                   <Font name="Cartograph CF" size="18.0" />
                </font>
             </Label>
-            <Label alignment="CENTER_RIGHT" layoutX="28.0" layoutY="82.0" prefHeight="140.0" prefWidth="394.0" text="72" textAlignment="CENTER">
+            <Label fx:id="resultTxt" alignment="CENTER_RIGHT" layoutX="28.0" layoutY="82.0" prefHeight="140.0" prefWidth="394.0" text="72" textAlignment="CENTER">
                <font>
                   <Font name="Cartograph CF Bold" size="68.0" />
                </font>
@@ -42,7 +41,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="30.0" prefWidth="57.0" style="-fx-background-color: #323232;" text="1/x" textAlignment="CENTER" textFill="WHITE">
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onFunctionBTN" prefHeight="30.0" prefWidth="57.0" style="-fx-background-color: #323232;" text="1/x" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font name="Cartograph CF Bold" size="13.0" />
                      </font>
@@ -134,7 +133,7 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Button alignment="CENTER" contentDisplay="CENTER" layoutX="353.0" layoutY="34.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="59.0" style="-fx-background-color: grey;" text="7" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="1">
+                  <Button alignment="CENTER" contentDisplay="CENTER" layoutX="353.0" layoutY="34.0" mnemonicParsing="false" onAction="#onNumberBTN" prefHeight="37.0" prefWidth="59.0" style="-fx-background-color: grey;" text="7" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="1">
                      <font>
                         <Font name="Cartograph CF Bold" size="20.0" />
                      </font>
@@ -144,7 +143,7 @@
                         <Font name="Cartograph CF Bold" size="20.0" />
                      </font>
                   </Button>
-                  <Button alignment="CENTER" contentDisplay="CENTER" layoutX="35.0" layoutY="23.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="59.0" style="-fx-background-color: grey;" text="0" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                  <Button alignment="CENTER" contentDisplay="CENTER" layoutX="35.0" layoutY="23.0" mnemonicParsing="false" onAction="#onNumberBTN" prefHeight="37.0" prefWidth="59.0" style="-fx-background-color: grey;" text="0" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="4">
                      <font>
                         <Font name="Cartograph CF Bold" size="20.0" />
                      </font>
@@ -154,42 +153,42 @@
                         <Font name="Cartograph CF Bold" size="20.0" />
                      </font>
                   </Button>
-                  <Button alignment="CENTER" contentDisplay="CENTER" layoutX="35.0" layoutY="23.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="59.0" style="-fx-background-color: grey;" text="3" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                  <Button alignment="CENTER" contentDisplay="CENTER" layoutX="35.0" layoutY="23.0" mnemonicParsing="false" onAction="#onNumberBTN" prefHeight="37.0" prefWidth="59.0" style="-fx-background-color: grey;" text="3" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="3">
                      <font>
                         <Font name="Cartograph CF Bold" size="20.0" />
                      </font>
                   </Button>
-                  <Button alignment="CENTER" contentDisplay="CENTER" layoutX="35.0" layoutY="23.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="59.0" style="-fx-background-color: grey;" text="2" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                  <Button alignment="CENTER" contentDisplay="CENTER" layoutX="35.0" layoutY="23.0" mnemonicParsing="false" onAction="#onNumberBTN" prefHeight="37.0" prefWidth="59.0" style="-fx-background-color: grey;" text="2" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <font>
                         <Font name="Cartograph CF Bold" size="20.0" />
                      </font>
                   </Button>
-                  <Button alignment="CENTER" contentDisplay="CENTER" layoutX="35.0" layoutY="23.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="59.0" style="-fx-background-color: grey;" text="1" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="3">
+                  <Button alignment="CENTER" contentDisplay="CENTER" layoutX="35.0" layoutY="23.0" mnemonicParsing="false" onAction="#onNumberBTN" prefHeight="37.0" prefWidth="59.0" style="-fx-background-color: grey;" text="1" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="3">
                      <font>
                         <Font name="Cartograph CF Bold" size="20.0" />
                      </font>
                   </Button>
-                  <Button alignment="CENTER" contentDisplay="CENTER" layoutX="35.0" layoutY="23.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="59.0" style="-fx-background-color: grey;" text="6" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                  <Button alignment="CENTER" contentDisplay="CENTER" layoutX="35.0" layoutY="23.0" mnemonicParsing="false" onAction="#onNumberBTN" prefHeight="37.0" prefWidth="59.0" style="-fx-background-color: grey;" text="6" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="2">
                      <font>
                         <Font name="Cartograph CF Bold" size="20.0" />
                      </font>
                   </Button>
-                  <Button alignment="CENTER" contentDisplay="CENTER" layoutX="35.0" layoutY="23.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="59.0" style="-fx-background-color: grey;" text="5" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <Button alignment="CENTER" contentDisplay="CENTER" layoutX="35.0" layoutY="23.0" mnemonicParsing="false" onAction="#onNumberBTN" prefHeight="37.0" prefWidth="59.0" style="-fx-background-color: grey;" text="5" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <font>
                         <Font name="Cartograph CF Bold" size="20.0" />
                      </font>
                   </Button>
-                  <Button alignment="CENTER" contentDisplay="CENTER" layoutX="35.0" layoutY="23.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="59.0" style="-fx-background-color: grey;" text="4" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="2">
+                  <Button alignment="CENTER" contentDisplay="CENTER" layoutX="35.0" layoutY="23.0" mnemonicParsing="false" onAction="#onNumberBTN" prefHeight="37.0" prefWidth="59.0" style="-fx-background-color: grey;" text="4" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="2">
                      <font>
                         <Font name="Cartograph CF Bold" size="20.0" />
                      </font>
                   </Button>
-                  <Button alignment="CENTER" contentDisplay="CENTER" layoutX="35.0" layoutY="23.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="59.0" style="-fx-background-color: grey;" text="9" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                  <Button alignment="CENTER" contentDisplay="CENTER" layoutX="35.0" layoutY="23.0" mnemonicParsing="false" onAction="#onNumberBTN" prefHeight="37.0" prefWidth="59.0" style="-fx-background-color: grey;" text="9" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1">
                      <font>
                         <Font name="Cartograph CF Bold" size="20.0" />
                      </font>
                   </Button>
-                  <Button alignment="CENTER" contentDisplay="CENTER" layoutX="35.0" layoutY="23.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="59.0" style="-fx-background-color: grey;" text="8" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <Button alignment="CENTER" contentDisplay="CENTER" layoutX="35.0" layoutY="23.0" mnemonicParsing="false" onAction="#onNumberBTN" prefHeight="37.0" prefWidth="59.0" style="-fx-background-color: grey;" text="8" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font name="Cartograph CF Bold" size="20.0" />
                      </font>

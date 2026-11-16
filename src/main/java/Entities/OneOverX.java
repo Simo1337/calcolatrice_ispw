@@ -1,8 +1,12 @@
 package Entities;
 
 public class OneOverX extends Button{
+    public OneOverX(String text) {
+        super(text);
+    }
+
     @Override
-    public float DoOp(int num) {
-        return (1/(float)num);
+    public float DoOp(float num) {
+        return (1/num);
     }
 }

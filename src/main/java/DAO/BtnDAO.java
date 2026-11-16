@@ -5,9 +5,8 @@ public class BtnDAO {
     public static Button GetClickedBTN(String op){
         switch (op){
             case "1/x":
-                Button btn = new OneOverX();
-                return btn;
+                return new OneOverX(op);
         }
-        return new NumBTN();
+        return new NumBTN(op);
     }
 }
